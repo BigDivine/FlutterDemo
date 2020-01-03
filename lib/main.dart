@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'bicycle.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,8 +8,18 @@ class MyApp extends StatelessWidget {
   BuildContext context;
   @override
   Widget build(BuildContext context) {
+    var bike = Bicycle(1, "bawang");
+    bike.applyBrake(100);
+    bike.speedUp(104);
+    print(bike);
+
+
     this.context = context;
-    return MaterialApp(title: 'Welcome to Flutter', home: RandomWords());
+    return MaterialApp(
+      title: 'Welcome to Flutter',
+      home: RandomWords(),
+      theme: new ThemeData(primaryColor: Colors.red),
+    );
   }
 }
 
